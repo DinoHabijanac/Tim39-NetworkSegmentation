@@ -1,0 +1,10 @@
+Router>enable
+Router#show access-lists
+Extended IP access list 100
+    10 permit icmp 192.168.10.0 0.0.0.255 192.168.10.0 0.0.0.255
+    20 permit icmp 192.168.10.0 0.0.0.255 any echo-reply
+    30 deny icmp 192.168.10.0 0.0.0.255 any (8 match(es))
+    40 permit tcp 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255 eq www
+    50 deny ip 192.168.10.0 0.0.0.255 192.168.30.0 0.0.0.255
+    60 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+    70 permit ip any any
